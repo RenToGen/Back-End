@@ -17,9 +17,9 @@ Escreva uma descrição do seu projeto
 
 <br>
 
-## :rocket: Rodando o projeto
+## :rocket: Apresentando o Código
 Para rodar o repositório é necessário clonar o mesmo para que acompanhe outros detalhamentos. Em direção a tasks propostas parte desta camada importante se trata das annotation:
-```
+~~~Java
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
@@ -39,7 +39,30 @@ public class Categoria {
 	@NotNull
 	private double valor;
   
+~~~
+
+<br>
+
+## 🚥 ATRIBUTOS E O MOTIVO DAS ESCOLHAS
+
 ```
+tb_categoria
+
+descricao_tomador: descrição da categoria que será visualizada pelo tomador de serviço.
+
+descricao_prestador: descrição da categoria que será visualizada pelo prestador de serviço.
+
+valor: referente ao serviço a ser prestado.
+
+```
+
+## 🔺 NOSSAS ANOTAÇÕES:
+
+ Tomador: é o conceito formal utilizado para expressar a relação de compra.
+<br>
+
+<hr size = "2"</hr>
+
 <br>
 
 ## :soon: Implementação futura
