@@ -4,11 +4,12 @@
 <h2 align="center">BANCO DE DADOS</h2>
 
 <h3 align="left">🤝 INTEGRANTES</h3>
-<h4 align="left">- Beatriz Rodrigues</h4>
-<h4 align="left">- Felipe Graebin</h4> 
-<h4 align="left">- Gustavo Victor</h4> 
-<h4 align="left">- Karen Rodrigues</h4> 
-<h4 align="left">- Tiago Assis</h4>
+
+* Beatriz Rodrigues
+* Felipe Graebin
+* Gustavo Victor
+* Karen Rodrigues
+* Tiago Assis
 
 <h1></h1>
 
