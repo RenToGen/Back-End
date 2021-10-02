@@ -1,7 +1,7 @@
 <h1 align="center">🧡 MODEL - SPRING</h1>
 
 ## :memo: Descrição
-Escreva uma descrição do seu projeto
+Com objetivo facilitar o processo em aplicações Java. O grupo parte da camada model construindo uma de suas tabelas principais a Categoria.
 
 <br>
 
