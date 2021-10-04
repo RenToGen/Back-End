@@ -5,9 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
+
 
 @Entity
 @Table(name = "tb_categoria")
@@ -17,15 +18,15 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotNull
-	@Size(min = 50, max = 500)
-	private String descricao_tomador;
+	@NotNull(message="O valor não pode Ser nulo")
+	@Size(min = 10, max = 500, message = "O texto tem que conter de 10 a 500 caracteres")
+	private String descricao;
 
-	@NotNull
-	@Size(min = 50, max = 500)
+	@NotNull(message="O valor não pode Ser nulo")
+	@Size(min = 50, max = 500, message = "O texto tem que conter de 50 a 500 caracteres")
 	private String descricao_prestador;
 
-	@NotNull
+	@NotNull(message="O valor não pode Ser nulo")
 	private double valor;
 
 	public long getId() {
@@ -36,12 +37,12 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getDescricao_tomador() {
-		return descricao_tomador;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescricao_tomador(String descricao_tomador) {
-		this.descricao_tomador = descricao_tomador;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getDescricao_prestador() {
