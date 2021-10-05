@@ -52,13 +52,16 @@ O Spring Boot é um framework Java open source que tem como objetivo facilitar e
 
 <hr size="2">
 
-<h2 align="left">:soon: Últimas Implementações (29/09) </h2>
+<h2 align="left">:soon: Últimas Implementações (05/10) </h2>
      
 <table>
   <tr>
     <td align="left"> 
       <a align="left" href="https://docs.google.com/document/d/1ftRYYV84tIUJFpVlPTz3IpgBj25ExoZfN5N65hZOJmY/edit"><b>3° TASK</b></a> = Objetivo: Criar o projeto spring no spring Initializr. <br>
-     <a align="left" href="https://docs.google.com/document/d/1ftRYYV84tIUJFpVlPTz3IpgBj25ExoZfN5N65hZOJmY/edit"><b>4° TASK</b></a> = Objetivo: Criar a primeira model do meu projeto spring e conectar ao banco de dados mysql</h5>
+     <a align="left" href="https://docs.google.com/document/d/1ftRYYV84tIUJFpVlPTz3IpgBj25ExoZfN5N65hZOJmY/edit"><b>4° TASK</b></a> = Objetivo: Criar a primeira model do meu projeto spring e conectar ao banco de dados mysql <br>
+        <b>5° TASK</b></a> = Objetivo: Criando o CRUD do meu projeto Spring<br>
+        <b>6° TASK</b></a> = Objetivo: Criando o CRUD com relacionamento para o meu projeto Spring
+    </h5>
 <br>
   </sub>
       </a>
@@ -108,4 +111,4 @@ O Spring Boot é um framework Java open source que tem como objetivo facilitar e
 
 ## :dart: Status do projeto
 
-<h3> Em andamento, a espera de aprovação. Registro de (29/09/2021). </h3>
+<h3> Em andamento ♻. Registro de (05/10/2021). </h3>
