@@ -1,7 +1,7 @@
 <h1 align="center">🧡 MODEL - SPRING</h1>
 
 ## :memo: Descrição
-Com objetivo facilitar o processo em aplicações Java. O grupo parte da camada model construindo uma de suas tabelas principais a Categoria.
+Com objetivo facilitar o processo em aplicações Java. O grupo parte da camada model construindo uma de suas tabelas principais a Categoria. Em sequência trabalha Produto e Usuario, conforme o pedido do cliente.
 
 <br>
 
@@ -17,27 +17,32 @@ Com objetivo facilitar o processo em aplicações Java. O grupo parte da camada 
 
 <br>
 
-## :rocket: Apresentando o Código
+## :rocket: Apresentando o Código ➡ Categoria
 Para rodar o repositório é necessário clonar o mesmo para que acompanhe outros detalhamentos. Em direção a tasks propostas parte desta camada importante se trata das annotation:
 ~~~Java
-@Entity
-@Table(name = "tb_categoria")
-public class Categoria {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	@Entity
+	@Table(name = "tb_categoria")
+	public class Categoria {
+	
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private long id;
 
-	@NotNull
-	@Size(min = 50, max = 500)
-	private String descricao_tomador;
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 20, max = 100, message = "O texto tem que conter de 50 a 500 caracteres")
+		private String categoria;
+	
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 10, max = 500, message = "O texto tem que conter de 10 a 500 caracteres")
+		private String descricao;
 
-	@NotNull
-	@Size(min = 50, max = 500)
-	private String descricao_prestador;
-
-	@NotNull
-	private double valor;
+		@NotBlank(message="O valor não pode Ser nulo")
+		private double valor;
+	
+		@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+		@JsonIgnoreProperties("categoria")
+		private List<Produto> produto;
   
 ~~~
 
@@ -46,27 +51,124 @@ public class Categoria {
 ## 🚥 ATRIBUTOS E O MOTIVO DAS ESCOLHAS
 
 ```
+
 tb_categoria
 
-descricao_tomador: descrição da categoria que será visualizada pelo tomador de serviço.
-
-descricao_prestador: descrição da categoria que será visualizada pelo prestador de serviço.
-
+categoria: referente ao item que representa um grupo de serviços que se relacionam.
+descricao: descrição da categoria que será visualizada pelos usuários.
 valor: referente ao serviço a ser prestado.
 
 ```
 
-## 🔺 NOSSAS ANOTAÇÕES:
+<hr size = "2"</hr>
 
- Tomador: é o conceito formal utilizado para expressar a relação de compra.
+<br>
+<br>
+
+## :rocket: Código ➡ Produto
+Para rodar o repositório é necessário clonar o mesmo para que acompanhe outros detalhamentos. Em direção a tasks propostas a model de Produto se apresentará assim:
+~~~Java
+
+	@Entity
+	@Table (name = "tb_produto")
+	public class Produto {
+		
+		
+		@Id
+	   	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	    	private long id;
+		
+
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 10, max = 100, message = "O texto tem que conter de 10 a 100 caracteres")
+		private String nomeServico;
+		
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 50, max = 1000, message = "O texto tem que conter de 50 a 1000 caracteres")
+		private String apresentacao;
+		
+		@ManyToOne
+		@JsonIgnoreProperties("produto")
+		private Categoria categoria;
+~~~
+
+<br>
+
+## 🚥 ATRIBUTOS E O MOTIVO DAS ESCOLHAS
+
+```
+
+tb_produtos
+
+idCategoria: tipo de serviço prestado.
+idUser: refere-se ao usuário.
+nomeServico: título referente ao serviço.
+apresentacao: detalhes do serviço e seu prestador.
+
+```
+<br>
+
+<hr size = "2"</hr>
+
+## :rocket: Código ➡ Usuario
+Para rodar o repositório é necessário clonar o mesmo para que acompanhe outros detalhamentos. Em direção a tasks propostas a model de Produto se apresentará assim:
+~~~Java
+
+	@Entity
+	@Table (name = "tb_usuario")
+	public class Usuario {
+	
+	
+		@Id
+    		@GeneratedValue(strategy = GenerationType.IDENTITY)
+    		private long id;
+
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 10, max = 150, message = "O texto tem que conter de 10 a 150 caracteres")
+		private String nome;
+	
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 8, max = 50, message = "O texto tem que conter de 8 a 50 caracteres")
+		private String email;
+	
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 1, max = 1, message = "Voce deve selecionar uma das opções")
+		private char tipoCadastro;
+	
+		@NotBlank(message="O valor não pode Ser nulo")
+		@Size(min = 8, max = 20, message = "A senha tem que conter de 8 a 20 caracteres")
+		private String senha;
+~~~
+
+<br>
+
+## 🚥 ATRIBUTOS E O MOTIVO DAS ESCOLHAS
+
+```
+
+tb_user
+
+nome: nome do usuário.
+email: endereço eletrônico do usuário.
+tipoCadastro: o tipo que define se é tomador ou prestador.
+senha: escolhida pelo usuário para ter acesso a sua conta.
+
+```
 <br>
 
 <hr size = "2"</hr>
 
 <br>
 
+## 🔺 NOSSAS ANOTAÇÕES:
+
+* Tomador: é o conceito formal utilizado para expressar a relação de compra.
+* Não se esqueça dos Getters and Setters: necessário para a segurança e determinar onde esta classe poderá ser manipulada.
+<br>
+
+
 ## :soon: Implementação futura
-* 🚧
+* Relacionamento de Usuario e Produto.
 
 <br>
 
