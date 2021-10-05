@@ -151,7 +151,7 @@ Para rodar o repositório é necessário clonar o mesmo para que acompanhe outro
 
 
 ## :soon: Implementação futura
-* Relacionamento de Usuario e Produto.
+* Criação de UsuarioController.
 
 <br>
 
