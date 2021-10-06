@@ -1,7 +1,13 @@
-<div style="display: inline_block">
-    <h1 align="CENTER">🚧 BACK-END 🚧</h1>
+<h1 align="CENTER">🚧 BACK-END 🚧</h1>
    <br>
 
+   <p align="center">
+       <a href="https://github.com/RenToGen">
+        <img src="https://img.shields.io/github/last-commit/RenToGen/Back-End?color=green%20&label=Atividade%20de%20commit&logo=github&style=flat-square"/>
+        </a>
+        <img src="https://img.shields.io/github/contributors/RenToGen/Back-End?color=green%20&label=Contribuidores&logo=github&style=flat-square"/>
+        </p>
+    
 ## :memo: Descrição
 Neste repostitório você ira se deparar com a maior parte dos processos de criação do Back End do E-commerce **RenTo**. 
   
@@ -108,7 +114,3 @@ O Spring Boot é um framework Java open source que tem como objetivo facilitar e
 
 
 <br>
-
-## :dart: Status do projeto
-
-<h3> Em andamento ♻. Registro de (05/10/2021). </h3>
