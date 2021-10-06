@@ -137,16 +137,22 @@ Para rodar o repositório é necessário clonar o mesmo para que acompanhe outro
 
 ## 🔺 NOSSAS ANOTAÇÕES:
 
-* **@RestController:** indicar que são serviços REST com o tipo de resposta JSON.
-* **@CrossOrigin:** Compartilhamento de recursos com origens diferentes - é o que permite que um site acesse outro site mesmo tendo domínios de origens diferentes.
-* **@RequestMapping:** É o que define a url para quando for requisitada chamar o método.
-* **@Autowired:** É uma injeção de dependência. Basicamente, uma técnica de desenvolvimento utilizada para evitar o alto nível de junção de código 
-(Quando os componentes de uma aplicação dependem muito uns dos outros) dentro de uma aplicação.
-<br> MÉTODOS DE REQUISIÇÃO <br>
-* **@GetMapping:** Para retornar apenas dados. (Pegar)
-* **@PostMapping:** Causar uma mudança no estado do recurso. (Criar)
-* **@PutMapping:** Substitui todas as atuais representações do recurso de destino pela carga de dados da requisição. (atualizar)
-* **@DeleteMapping:** Deleta/Remove o recurso específico.
+- **@RestController:** indicar que são serviços REST com o tipo de resposta JSON.
+
+- **@CrossOrigin:** Compartilhamento de recursos com origens diferentes - é o que permite que um site acesse outro site mesmo tendo domínios de origens diferentes.
+
+- **@RequestMapping:** É o que define a url para quando for requisitada chamar o método.
+
+- **@Autowired:** É uma injeção de dependência. Basicamente, uma técnica de desenvolvimento utilizada para evitar o alto nível de junção de código.(Quando os componentes de uma aplicação dependem muito uns dos outros) dentro de uma aplicação.
+
+<br> <h4 align="center"> MÉTODOS DE REQUISIÇÃO </h4>
+- **@GetMapping:** Para retornar apenas dados. (Pegar)
+
+- **@PostMapping:** Causar uma mudança no estado do recurso. (Criar)
+
+- **@PutMapping:** Substitui todas as atuais representações do recurso de destino pela carga de dados da requisição. (atualizar)
+
+- **@DeleteMapping:** Deleta/Remove o recurso específico.
 <br>
 
 
