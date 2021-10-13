@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -22,9 +23,10 @@ public class Usuario {
 	@Size(min = 10, max = 150, message = "O texto tem que conter de 10 a 150 caracteres")
 	private String nome;
 	
+	@Email
 	@NotBlank(message="O valor não pode Ser nulo")
 	@Size(min = 8, max = 50, message = "O texto tem que conter de 8 a 50 caracteres")
-	private String email;
+	private String usuario;
 	
 	@NotBlank(message="O valor não pode Ser nulo")
 	@Size(min = 1, max = 1, message = "Voce deve selecionar uma das opções")
@@ -42,12 +44,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public char getTipoCadastro() {
@@ -65,5 +67,4 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
 }
