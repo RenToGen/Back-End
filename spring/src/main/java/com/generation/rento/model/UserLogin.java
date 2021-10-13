@@ -8,7 +8,7 @@ public class UserLogin {
 	
 	private String email;
 	
-	private char tipoCadastro;
+	private String tipoCadastro;
 	
 	private String senha;
 	
@@ -54,11 +54,11 @@ public class UserLogin {
 		this.token = token;
 	}
 
-	public char getTipoCadastro() {
+	public String getTipoCadastro() {
 		return tipoCadastro;
 	}
 
-	public void setTipoCadastro(char tipoCadastro) {
+	public void setTipoCadastro(String tipoCadastro) {
 		this.tipoCadastro = tipoCadastro;
 	}
 }

@@ -30,10 +30,10 @@ public class Usuario {
 	
 	@NotBlank(message="O valor não pode Ser nulo")
 	@Size(min = 1, max = 1, message = "Voce deve selecionar uma das opções")
-	private char tipoCadastro ;
+	private String tipoCadastro ;
 	
 	@NotBlank(message="O valor não pode Ser nulo")
-	@Size(min = 8, max = 20, message = "A senha tem que conter de 8 a 20 caracteres")
+	@Size(min = 8, max = 500, message = "A senha tem que conter de 8 a 20 caracteres")
 	private String senha ;
 
 	public String getNome() {
@@ -52,11 +52,11 @@ public class Usuario {
 		this.usuario = usuario;
 	}
 
-	public char getTipoCadastro() {
+	public String getTipoCadastro() {
 		return tipoCadastro;
 	}
 
-	public void setTipoCadastro(char tipoCadastro) {
+	public void setTipoCadastro(String tipoCadastro) {
 		this.tipoCadastro = tipoCadastro;
 	}
 
