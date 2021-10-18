@@ -8,6 +8,7 @@ import com.generation.rento.model.Produto;
 
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
-		public List<Produto> findAllBynomeServicoContainingIgnoreCase (String nomeServico);
+		
+	public List<Produto> findAllBynomeServicoContainingIgnoreCase (String nomeServico);
 		
 	}
