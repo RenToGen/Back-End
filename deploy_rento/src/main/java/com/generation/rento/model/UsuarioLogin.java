@@ -1,12 +1,12 @@
 package com.generation.rento.model;
 
-public class UserLogin {
+public class UsuarioLogin {
 
 	private long id;
 	
 	private String nome;
 	
-	private String email;
+	private String usuario;
 	
 	private String tipoCadastro;
 	
@@ -31,11 +31,11 @@ public class UserLogin {
 	}
 
 	public String getUsuario() {
-		return email;
+		return usuario;
 	}
 
 	public void setUsuario(String usuario) {
-		this.email = usuario;
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {

@@ -9,11 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 
 @Entity
@@ -24,28 +23,18 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotBlank(message="O valor não pode Ser nulo")
-	@Size(min = 20, max = 100, message = "O texto tem que conter de 50 a 500 caracteres")
+	@NotNull
 	private String categoria;
 	
-	@NotBlank(message="O valor não pode Ser nulo")
-	@Size(min = 10, max = 500, message = "O texto tem que conter de 10 a 500 caracteres")
+	@NotNull
 	private String descricao;
 
-	@NotBlank(message="O valor não pode Ser nulo")
+	@NotNull
 	private double valor;
 	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("categoria")
+	@JsonIgnoreProperties({"categoria", "usuario"})
 	private List<Produto> produto;
-	
-	public List<Produto> getProduto() {
-		return produto;
-	}
-
-	public void setProduto(List<Produto> produto) {
-		this.produto = produto;
-	}
 
 	public long getId() {
 		return id;
@@ -77,6 +66,14 @@ public class Categoria {
 
 	public void setValor(double valor) {
 		this.valor = valor;
+	}
+	
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 
 }

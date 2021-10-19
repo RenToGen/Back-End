@@ -24,39 +24,42 @@ import com.generation.rento.repository.CategoriaRepository;
 public class CategoriaController {
 	
 	@Autowired
-	private CategoriaRepository repository;
+	private CategoriaRepository categoriaRepository;
 	
 		@GetMapping
 		public ResponseEntity<List<Categoria>> getAll(){
-			return ResponseEntity.ok(repository.findAll());
+			return ResponseEntity.ok(categoriaRepository.findAll());
 		}
 		
 
 		@GetMapping("/{id}")
 		public ResponseEntity<Categoria> getById(@PathVariable long id){
-			return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
+			return categoriaRepository.findById(id)
+					.map(resp -> ResponseEntity.ok(resp))
 					.orElse(ResponseEntity.notFound().build());
 		}
 
 		@GetMapping("/descricao/{descricao}")
-		public ResponseEntity<List<Categoria>> getByName(@PathVariable String descricao){
-			return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
+		public ResponseEntity<List<Categoria>> getByDescricao(@PathVariable String descricao){
+			return ResponseEntity.ok(categoriaRepository.findAllByDescricaoContainingIgnoreCase(descricao));
 		}
 
 		@PostMapping
-		public ResponseEntity<Categoria> post (@RequestBody Categoria categoria){
+		public ResponseEntity<Categoria> postCategoria (@RequestBody Categoria categoria){
 			return ResponseEntity.status(HttpStatus.CREATED)
-					.body(repository.save(categoria));
+					.body(categoriaRepository.save(categoria));
 		}
 
 		@PutMapping
-		public ResponseEntity<Categoria> put (@RequestBody Categoria categoria){
-			return ResponseEntity.ok(repository.save(categoria));				
+		public ResponseEntity<Categoria> putCategoria (@RequestBody Categoria categoria){
+			return ResponseEntity.status(HttpStatus.OK)
+			.body(categoriaRepository.save(categoria));
+			
 		}
 		
 		@DeleteMapping("/{id}")
-		public void delete(@PathVariable long id) {
-			repository.deleteById(id);
+		public void deleteCategoria (@PathVariable long id) {
+			categoriaRepository.deleteById(id);
 		}
 
 }

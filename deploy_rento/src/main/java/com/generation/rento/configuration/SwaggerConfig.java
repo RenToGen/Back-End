@@ -20,17 +20,17 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.generation.rento.controller"))
-				.paths(PathSelectors.any()).build().apiInfo(metadata()).useDefaultResponseMessages(false)
+				.apis(RequestHandlerSelectors.basePackage("com.generation.rento.controller")).paths(PathSelectors.any())
+				.build().apiInfo(metadata()).useDefaultResponseMessages(false)
 				.globalResponses(HttpMethod.GET, responseMessage()).globalResponses(HttpMethod.POST, responseMessage())
 				.globalResponses(HttpMethod.PUT, responseMessage())
 				.globalResponses(HttpMethod.DELETE, responseMessage());
 	}
 
 	public static ApiInfo metadata() {
-		return new ApiInfoBuilder().title("API - RenTo").description("Projeto API Spring - RenTo")
-				.version("1.0.0").license("Apache License Version 2.0").licenseUrl("https://github.com/RenToGen")
-				.contact(contact()).build();
+		return new ApiInfoBuilder().title("API - RenTo").description("Projeto API Spring - RenTo").version("1.0.0")
+				.license("Apache License Version 2.0").licenseUrl("https://github.com/RenToGen").contact(contact())
+				.build();
 	}
 
 	private static Contact contact() {

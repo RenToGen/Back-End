@@ -1,7 +1,5 @@
 package com.generation.rento.model;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,63 +7,72 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-	@Entity
-	@Table (name = "tb_produto")
-	public class Produto {
-		
-		
-		@Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private long id;
-		
+@Entity
+@Table(name = "tb_produto")
+public class Produto {
 
-		@NotBlank(message="O valor não pode Ser nulo")
-		@Size(min = 10, max = 100, message = "O texto tem que conter de 10 a 100 caracteres")
-		private String nomeServico;
-		
-		@NotBlank(message="O valor não pode Ser nulo")
-		@Size(min = 50, max = 1000, message = "O texto tem que conter de 50 a 1000 caracteres")
-		private String apresentacao;
-		
-		@ManyToOne
-		@JsonIgnoreProperties("produto")
-		private Categoria categoria;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
-		public Categoria getCategoria() {
-			return categoria;
-		}
+	@NotNull(message = "O valor não pode Ser nulo")
+	@Size(min = 10, max = 100, message = "O texto tem que conter de 10 a 100 caracteres")
+	private String nomeServico;
 
-		public void setCategoria(Categoria categoria) {
-			this.categoria = categoria;
-		}
+	@NotNull (message = "O valor não pode Ser nulo")
+	@Size(min = 50, max = 1000, message = "O texto tem que conter de 50 a 1000 caracteres")
+	private String apresentacao;
 
-		public long getId() {
-			return id;
-		}
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
 
-		public void setId(long id) {
-			this.id = id;
-		}
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
 
-		public String getNomeServico() {
-			return nomeServico;
-		}
+	public long getId() {
+		return id;
+	}
 
-		public void setNomeServico(String nomeServico) {
-			this.nomeServico = nomeServico;
-		}
+	public void setId(long id) {
+		this.id = id;
+	}
 
-		public String getApresentacao() {
-			return apresentacao;
-		}
+	public String getNomeServico() {
+		return nomeServico;
+	}
 
-		public void setApresentacao(String apresentacao) {
-			this.apresentacao = apresentacao;
-		}
-		
-		
-		
+	public void setNomeServico(String nomeServico) {
+		this.nomeServico = nomeServico;
+	}
+
+	public String getApresentacao() {
+		return apresentacao;
+	}
+
+	public void setApresentacao(String apresentacao) {
+		this.apresentacao = apresentacao;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }
