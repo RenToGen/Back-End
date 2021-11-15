@@ -34,6 +34,8 @@ public class Produto {
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Usuario usuario;
+	
+	private String imagem;
 
 	public long getId() {
 		return id;
@@ -73,6 +75,14 @@ public class Produto {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
 
 }
