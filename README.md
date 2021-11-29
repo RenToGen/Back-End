@@ -9,7 +9,7 @@
         </p>
     
 ## :memo: Descrição
-Neste repostitório você ira se deparar com a maior parte dos processos de criação do Back End do E-commerce **RenTo**. 
+Neste repostitório você ira se deparar com a maior parte dos processos de criação do Back-End do E-commerce **RenTo**. 
   
 <br>
   
